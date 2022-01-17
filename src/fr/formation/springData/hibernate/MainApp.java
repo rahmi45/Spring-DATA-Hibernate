@@ -1,17 +1,17 @@
 package fr.formation.springData.hibernate;
 
-import java.util.List;
-
-import org.hibernate.Criteria;
+//import java.util.List;
+//
+//import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.LogicalExpression;
-import org.hibernate.criterion.Projections;
-import org.hibernate.criterion.Restrictions;
-
-import fr.formation.springData.hibernate.model.Client;
+//import org.hibernate.criterion.Criterion;
+//import org.hibernate.criterion.LogicalExpression;
+//import org.hibernate.criterion.Projections;
+//import org.hibernate.criterion.Restrictions;
+//
+//import fr.formation.springData.hibernate.model.Client;
 import fr.formation.springData.hibernate.model.Data;
 import fr.formation.springData.hibernate.model.Person;
 

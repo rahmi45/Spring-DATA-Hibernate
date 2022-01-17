@@ -62,6 +62,28 @@ public class MainApp {
 		try {
 			session.beginTransaction();
 			
+			Data data = new Data();
+			
+			data.setId(1);
+			
+			Data d = session.get(Data.class, data.getId());
+			
+			
+			System.out.println(d.getPerson().toString());
+			System.out.println(d.toString());
+			
+			session.delete(d);
+//			Person p = new Person();
+//			p.setName("Rachid RAHMI");
+//			
+//			Data d  = new Data();
+//			d.setAge("41");
+//			
+//			session.save(d);
+//			p.setData(d);
+//			
+//			session.save(p);
+			
 //			@SuppressWarnings("deprecation")
 //			Criteria c = session.createCriteria(Client.class);
 //			c.setProjection(Projections.min("id"));

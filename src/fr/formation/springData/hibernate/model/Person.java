@@ -1,5 +1,6 @@
 package fr.formation.springData.hibernate.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Person {
 	@Column(name= "full_name")
 	private String name;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name="id_data")
 	private Data data;
 
@@ -45,7 +46,20 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
+	public Data getData() {
+		return data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", name=" + name + "]";
+	}
+
 	
 
 }

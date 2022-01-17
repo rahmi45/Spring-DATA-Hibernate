@@ -1,12 +1,12 @@
 package fr.formation.springData.hibernate.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
-//import javax.persistence.OneToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,9 +21,8 @@ public class Data {
 	@Column(name="person_age")
 	private String age;
 	
-//	@OneToOne
-//	@JoinColumn(name="id_person")
-//	private Person person;
+	@OneToOne(mappedBy = "data" , cascade = CascadeType.ALL)
+	private Person person;
 	
 	
 	public Data() {
@@ -45,6 +44,20 @@ public class Data {
 
 	public void setAge(String age) {
 		this.age = age;
+	}
+
+	
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	@Override
+	public String toString() {
+		return "Data [id=" + id + ", age=" + age + "]";
 	}
 	
 	

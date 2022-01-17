@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name="information")
@@ -18,6 +21,10 @@ public class Info {
 	
 	@Column(name="phone")
 	private String phone;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_student")
+	private Student student;
 
 	public Info() {
 		super();
@@ -39,6 +46,21 @@ public class Info {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
+	}
+
+	@Override
+	public String toString() {
+		return "Info [id=" + id + ", phone=" + phone + "]";
+	}
+	
+	
 	
 	
 

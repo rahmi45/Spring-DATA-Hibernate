@@ -12,9 +12,9 @@ import org.hibernate.cfg.Configuration;
 //import org.hibernate.criterion.Restrictions;
 //
 //import fr.formation.springData.hibernate.model.Client;
-import fr.formation.springData.hibernate.model.Data;
+//import fr.formation.springData.hibernate.model.Data;
 import fr.formation.springData.hibernate.model.Info;
-import fr.formation.springData.hibernate.model.Person;
+//import fr.formation.springData.hibernate.model.Person;
 import fr.formation.springData.hibernate.model.Student;
 
 

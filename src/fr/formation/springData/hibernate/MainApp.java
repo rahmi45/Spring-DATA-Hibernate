@@ -13,7 +13,9 @@ import org.hibernate.cfg.Configuration;
 //
 //import fr.formation.springData.hibernate.model.Client;
 import fr.formation.springData.hibernate.model.Data;
+import fr.formation.springData.hibernate.model.Info;
 import fr.formation.springData.hibernate.model.Person;
+import fr.formation.springData.hibernate.model.Student;
 
 
 
@@ -39,8 +41,8 @@ public class MainApp {
 //		}
 		
 		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
-				.addAnnotatedClass(Person.class)
-				.addAnnotatedClass(Data.class)
+				.addAnnotatedClass(Student.class)
+				.addAnnotatedClass(Info.class)
 				.buildSessionFactory();
 		
 		Session session = factory.getCurrentSession();
@@ -62,17 +64,17 @@ public class MainApp {
 		try {
 			session.beginTransaction();
 			
-			Data data = new Data();
-			
-			data.setId(1);
-			
-			Data d = session.get(Data.class, data.getId());
-			
-			
-			System.out.println(d.getPerson().toString());
-			System.out.println(d.toString());
-			
-			session.delete(d);
+//			Data data = new Data();
+//			
+//			data.setId(1);
+//			
+//			Data d = session.get(Data.class, data.getId());
+//			
+//			
+//			System.out.println(d.getPerson().toString());
+//			System.out.println(d.toString());
+//			
+//			session.delete(d);
 //			Person p = new Person();
 //			p.setName("Rachid RAHMI");
 //			

@@ -2,6 +2,8 @@ package fr.formation.springData.hibernate.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +12,7 @@ import javax.persistence.Table;
 public class Client {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="client_id")
 	private Long id;
 	
@@ -21,6 +24,19 @@ public class Client {
 	
 	@Column(name="client_address")
 	private String address;
+	
+	
+
+	public Client() {
+		
+	}
+
+	public Client(String fullName, int age, String address) {
+		super();
+		this.fullName = fullName;
+		this.age = age;
+		this.address = address;
+	}
 
 	public Long getId() {
 		return id;
@@ -52,6 +68,11 @@ public class Client {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", fullName=" + fullName + ", age=" + age + ", address=" + address + "]";
 	}
 	
 	
